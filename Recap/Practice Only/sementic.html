@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML Layout</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, nav, main, article, section, aside, footer {
+            padding: 10px;
+            margin: 10px;
+        }
+        
+        header {
+            background-color: #f28b82;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #a5d6a7;
+            text-align: center;
+        }
+        
+        aside {
+            background-color: #f48fb1;
+            float: left;
+            width: 20%;
+            height: 100%;
+        }
+
+        main {
+            background-color: #b3e5fc;
+            float: right;
+            width: 70%;
+        }
+
+        article {
+            background-color: #81d4fa;
+            padding: 10px;
+        }
+
+        figure {
+            background-color: #ffecb3;
+            padding: 10px;
+        }
+
+        section {
+            background-color: #4fc3f7;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #ce93d8;
+            text-align: center;
+            clear: both;
+            padding: 20px;
+        }
+
+        /* Clear floats */
+        .Semantic::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Semantic HTML</h1>
+    </header>
+    <nav> <p>Navigation Bar</p> </nav>
+    <div class="Semantic">
+        <aside>   <p>Aside Section</p>  </aside>
+        <main>
+            <article>
+                <h2>Article Title</h2>
+                <figure>
+                    <img src="image.jpg" alt="Figure" width="100%">
+                    <figcaption>Figure Description</figcaption>
+                </figure>
+                <p>This is a paragraph inside the article.</p>
+            </article>
+            <section>
+                <h2>Section Title</h2>
+                <p>This is a section inside the main content.</p>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>Footer Section</p>
+    </footer>
+</body>
+</html>

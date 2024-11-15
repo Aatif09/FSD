@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        /* The animation code */
+        @keyframes circulation {
+            from {
+               
+                transform: translate(0px,0px);
+                background-color: red;}
+                to {
+                    
+                    transform: translate(360px,360px);
+                    background-color: yellow;}
+                }
+
+                .ball {
+                    height: 200px;
+                    width: 300px;
+                    border-radius: 50%;
+             
+                    background-color: aquamarine;
+                    animation-name: circulation;
+                    animation-duration: 4s;
+                    animation-iteration-count: 200;
+                 
+          
+                }
+
+                /* .ball-right-botom{
+            position:absolute;
+            bottom: 10px;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <div class="ball ball-right-botom"></div>
+</body>
+
+</html>

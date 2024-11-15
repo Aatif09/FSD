@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Drag-and-Drop API Example</title>
+    <style>
+      #dragItem {
+        width: 100px;
+        height: 100px;
+        background-color: lightcoral;
+        margin: 10px;
+        cursor: grab;
+      }
+      #dropZone {
+        width: 200px;
+        height: 200px;
+        border: 2px dashed #aaa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Draggable element -->
+    <div id="dragItem" draggable="true">Drag me</div>
+
+    <!-- Drop zone -->
+    <div id="dropZone">Drop here</div>
+
+    <script>
+      // Get references to the drag item and the drop zone
+      const dragItem = document.getElementById("dragItem");
+      const dropZone = document.getElementById("dropZone");
+
+      // Event listeners for the drag item
+      dragItem.addEventListener("dragstart", (event) => {
+        event.dataTransfer.setData("text/plain", event.target.id);
+        event.target.style.opacity = "0.5"; // Indicate that the element is being dragged
+      });
+
+      dragItem.addEventListener("dragend", (event) => {
+        event.target.style.opacity = ""; // Reset opacity once dragging is done
+      });
+
+      // Event listeners for the drop zone
+      dropZone.addEventListener("dragover", (event) => {
+        event.preventDefault(); // Prevent default to allow dropping
+      });
+
+      dropZone.addEventListener("drop", (event) => {
+        event.preventDefault();
+        const draggedElementId = event.dataTransfer.getData("text");
+        const draggedElement = document.getElementById(draggedElementId);
+        dropZone.appendChild(draggedElement); // Append dragged element to the drop zone
+        dropZone.style.borderColor = "green"; // Indicate successful drop
+      });
+
+      dropZone.addEventListener("dragleave", () => {
+        dropZone.style.borderColor = ""; // Reset border color on drag leave
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+.container{
+    margin: auto;
+    box-sizing: border-box;
+    width: 50%;
+    height: 80vh;
+    background-color: chartreuse;
+    border-radius: 10px;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: row;;
+    justify-items: center;
+}
+.quiz{
+  font-size: 30px;
+}
+
+#previous{
+    margin: 26px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    font-size: 32px;
+}
+
+#next{
+    display: inline;
+    align-items: left;
+    margin: 26px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    font-size: 32px;
+}

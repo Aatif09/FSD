@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="parent"></div>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <script type="text/babel">
+    const parent = document.getElementById("parent");
+    const root = ReactDOM.createRoot(parent);
+
+    // const title = React.createElement("h4", {}, "Shopping Text");
+
+    // // root.render(title);
+
+    // const item1 = React.createElement("li", {}, "Vegetables");
+    // const item2 = React.createElement("li", {}, "Fruits");
+    // const list = React.createElement("ul", {}, item1, item2);
+    // const list2 = React.createElement("ul", {}, [item1, item2]);
+    // // root.render(list);
+    // // root.render(list2);
+
+
+    // const elements = React.createElement(React.Fragment, {}, title, item1, item2);
+    // //React.Fragment: Used to group multiple children without adding an extra node to the DOM
+
+    // root.render(elements);
+
+    // const title = <h4> Shoppling List New </h4>;
+    // const li1 = <li> Vegetables</li>;
+    // const li2 = <li> Fruits</li>;
+    // const ul = (
+    //   <ul>
+    //     {li1} {li2}{" "}
+    //   </ul>
+    // );
+    // const container = (
+    //   <div>
+    //     {title} {ul}
+    //   </div>
+    // );
+    // root.render(container);
+
+    const container = <div>
+      <h4 id="title"> Shoppling List New </h4>
+      <ul>
+        <li className="list-item"> Vegetables</li>
+        <li className="list-item"> Fruits</li>
+      </ul>
+    </div>;
+    root.render(container);
+
+  </script>
+
+
+</body>
+
+</html>

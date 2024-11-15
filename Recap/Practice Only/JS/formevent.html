@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Details</title>
+</head>
+
+<body>
+    <h1>Enter Your Details Here</h1>
+    <form action="" onsubmit="return validateForm()">
+        <label for="">First Name </label>
+        <input type="text" name="firstName" value="ABES">
+        <br>
+        <label for="">Age</label>
+        <input type="number" placeholder="Type Number only">
+        <br>
+        <label for="">Date Of Birth</label>
+        <input type="date">
+        <br>
+        <label for="email">Email</label>
+        <input id="email" placeholder="@abes.ac.in" type="email">
+        <label for="">Password</label>
+        <input type="password">
+        <br>
+        <p>Enter your TShirt Size</p>
+        <input id="small" name="tshirtSize" type="radio" value="small">
+        <label for="small">Small size</label><br>
+        <input id="large" name="tshirtSize" type="radio" value="large">
+        <label for="large">Large</label><br>
+
+        <label for="color">Your Favorite color</label>
+        <input id="color" type="color">
+        <br>
+        <label for="aboutYourself">Tell us about yourself</label>
+        <textarea name="aboutYourself" id="aboutYourself" cols="30" rows="5"></textarea>
+        <input type="submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+            let firstName = document.querySelector('input[name="firstName"]').value;
+            let age = document.querySelector('input[type="number"]').value;
+            let dob = document.querySelector('input[type="date"]').value;
+            let email = document.getElementById("email").value;
+            let password = document.querySelector('input[type="password"]').value;
+            let tshirtSize = document.querySelector('input[name="tshirtSize"]:checked');
+            let favoriteColor = document.getElementById("color").value;
+            let aboutYourself = document.getElementById("aboutYourself").value;
+
+            if (firstName.trim() === "") {
+                alert("First Name is required");
+                isValid = false;
+            }
+            if (firstName.trim().length < 5) {
+                alert("First Name must be at least 5 characters long");
+                isValid = false;
+            }
+
+            if (age === "" || isNaN(age) || age < 1 || age > 100) {
+                alert("Please enter a valid age between 1 and 100");
+                isValid = false;
+            }
+
+            if (dob === "") {
+                alert("Please select your Date of Birth");
+                isValid = false;
+            }
+
+            // const dateFormat = /^\d{2}-\d{2}-\d{4}$/;  // /^\d{2}\/\d{2}\/\d{4}$/;
+            // if (!dateFormat.test(dob)) {
+            //     alert("Please enter your Date of Birth in the format ");
+            //     isValid = false;
+            // }
+
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@abes\.ac\.in$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid ABES email (e.g., yourname@abes.ac.in)");
+                isValid = false;
+            }
+
+            if (password.trim() === "") {
+                alert("Password is required");
+                isValid = false;
+            }
+            if (!tshirtSize) {
+                alert("Please select a T-Shirt size");
+                isValid = false;
+            }
+
+            if (favoriteColor === "") {
+                alert("Please select your favorite color");
+                isValid = false;
+            }
+
+            if (aboutYourself.trim() === "") {
+                alert("Please tell us about yourself");
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+
+</body>
+
+</html>

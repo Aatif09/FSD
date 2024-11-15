@@ -1,0 +1,8 @@
+.footer{
+    width: 100vw;
+    height: 5vh;
+    background-color: red;
+    color: gold;
+    font-size: 24px;
+    text-align: center;
+}

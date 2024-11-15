@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extended Registration Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #218838;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+
+    .success {
+      color: green;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="registrationForm">
+    <h2>Register</h2>
+
+    <!-- Full Name -->
+    <div class="error" id="nameError"></div>
+    <input type="text" id="name" placeholder="Full Name">
+
+    <!-- Age -->
+    <div class="error" id="ageError"></div>
+    <input type="number" id="age" placeholder="Age">
+
+    <!-- Date of Birth -->
+    <div class="error" id="dobError"></div>
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob">
+
+    <!-- Gender -->
+    <div class="error" id="genderError"></div>
+    <label for="gender">Gender</label>
+    <select id="gender">
+      <option value="">Select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <!-- Email -->
+    <div class="error" id="emailError"></div>
+    <input type="email" id="email" placeholder="Email Address">
+
+    <!-- Phone Number -->
+    <div class="error" id="phoneError"></div>
+    <input type="number" id="phone" placeholder="Phone Number">
+
+    <!-- Password -->
+    <div class="error" id="passwordError"></div>
+    <input type="password" id="password" placeholder="Password">
+
+    <!-- Confirm Password -->
+    <div class="error" id="confirmPasswordError"></div>
+    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+    <!-- Hobbies -->
+    <label for="hobbies">Hobbies (Comma Separated)</label>
+    <textarea id="hobbies" placeholder="Enter your hobbies..."></textarea>
+
+    <input type="submit" value="Register">
+
+    <div class="success" id="successMessage"></div>
+  </form>
+
+  <script>
+    // JavaScript form validation
+    const form = document.getElementById('registrationForm');
+    const nameInput = document.getElementById('name');
+    const ageInput = document.getElementById('age');
+    const dobInput = document.getElementById('dob');
+    const genderInput = document.getElementById('gender');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const hobbiesInput = document.getElementById('hobbies');
+
+    // Error message divs
+    const nameError = document.getElementById('nameError');
+    const ageError = document.getElementById('ageError');
+    const dobError = document.getElementById('dobError');
+    const genderError = document.getElementById('genderError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const passwordError = document.getElementById('passwordError');
+    const confirmPasswordError = document.getElementById('confirmPasswordError');
+    const successMessage = document.getElementById('successMessage');
+
+    // Add event listener for form submission
+    form.addEventListener('submit', function(event) {
+      // Clear previous error messages
+      nameError.innerText = '';
+      ageError.innerText = '';
+      dobError.innerText = '';
+      genderError.innerText = '';
+      emailError.innerText = '';
+      phoneError.innerText = '';
+      passwordError.innerText = '';
+      confirmPasswordError.innerText = '';
+      successMessage.innerText = '';
+
+      let isValid = true;
+
+      // Name validation: cannot be empty
+      if (nameInput.value.trim() === '') {
+        nameError.innerText = 'Name is required.';
+        isValid = false;
+      }
+
+      // Age validation: must be a positive number
+      if (ageInput.value <= 0) {
+        ageError.innerText = 'Please enter a valid age.';
+        isValid = false;
+      }
+
+      // Date of Birth validation: cannot be empty
+      if (dobInput.value === '') {
+        dobError.innerText = 'Date of Birth is required.';
+        isValid = false;
+      }
+
+      // Gender validation: must be selected
+      if (genderInput.value === '') {
+        genderError.innerText = 'Please select your gender.';
+        isValid = false;
+      }
+
+      // Email validation: basic format check
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailPattern.test(emailInput.value)) {
+        emailError.innerText = 'Please enter a valid email address.';
+        isValid = false;
+      }
+
+      // Phone validation: must be a valid number
+      if (phoneInput.value.length < 10) {
+        phoneError.innerText = 'Please enter a valid phone number.';
+        isValid = false;
+      }
+
+      // Password validation: must be at least 6 characters
+      if (passwordInput.value.length < 6) {
+        passwordError.innerText = 'Password must be at least 6 characters.';
+        isValid = false;
+      }
+
+      // Confirm password validation: must match password
+      if (passwordInput.value !== confirmPasswordInput.value) {
+        confirmPasswordError.innerText = 'Passwords do not match.';
+        isValid = false;
+      }
+
+      // Hobbies validation: optional but checks for non-empty if entered
+      if (hobbiesInput.value.trim() !== '' && hobbiesInput.value.trim().length < 2) {
+        hobbiesInput.innerText = 'Please enter valid hobbies.';
+        isValid = false;
+      }
+
+      // If form is valid, display success message
+      if (isValid) {
+        successMessage.innerText = 'Registration successful!';
+      } else {
+        event.preventDefault(); // Prevent form submission if invalid
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iframe Example</title>
+    <style>
+      .container {
+        display: flex;
+        border: 1px solid green;
+      }
+      iframe {
+        width: 50%;
+        height: 500px;
+        border: 1px solid black;
+      }
+      .link-container {
+        width: 50%;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- First section with anchor tag -->
+      <div class="link-container">
+        <a href="https://www.abes.ac.in" target="frame2">
+          Open Google in the second frame
+        </a>
+      </div>
+
+      <!-- Second iframe where google.com will be displayed -->
+      <iframe name="frame2"></iframe>
+    </div>
+  </body>
+</html>

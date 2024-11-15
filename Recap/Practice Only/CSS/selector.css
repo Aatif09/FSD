@@ -1,0 +1,33 @@
+/* Descendant selector (space) - applies to all paragraphs inside .parent div  */
+
+/* .parent p {
+  color: blue;
+} */
+
+/* Child selector (>) - applies only to direct child h1 inside .parent div */
+
+.parent>h1 {
+  color: red;
+}
+
+
+/*Adjacent sibling selector (+) - applies to the paragraph immediately following h2*/
+
+h2+p {
+  color: green;
+}
+
+/* General sibling selector (~) - applies to all sibling paragraphs following h2 */
+
+h2~p {
+  color: blueviolet;
+}
+
+
+/* 
+Correct Order of Precedence: 
+Adjacent Sibling Selector (+) and General Sibling Selector (~) 
+Child Selector (>) 
+Descendant Selector (space) 
+
+*/

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSrd UI</title>
+    
+</head>
+<body>
+    <div class="parent"> </div>
+    <form>
+        <label> Name</label>
+        <input type="text" onchange="handleName(event)">
+        <label> Employee</label>
+        <input type="text" onkeyup="handleCode(event)">
+        <label> Profile Pic</label>
+        <input type="file" onchange="handlefile(event)">
+
+    </form>
+<div>
+    <h1> ID CArd</h1>
+    <h2 id="card-name"> Name</h2>
+    <h3 id="card-code"> Employee</h3>
+    <img id="file" width="200px" alt="card-image">
+</div>
+</div>
+          
+          <script src="script.js"></script>
+</body>
+</html>

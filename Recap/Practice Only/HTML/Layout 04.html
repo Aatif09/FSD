@@ -1,0 +1,96 @@
+<!doctype html> 
+<html>
+<head>
+<title>HTML Layout</title>
+<style>
+body{ background:#F5F5F5; margin:0px; padding:0px}
+html,*{ margin:0px; padding:0px}
+h1,h2,h3,h4,h5,h6,p{ margin:0px; padding:0px; text-align:center}
+h2{ font-weight:100; font-size:18px; font-family:arial }
+a{ text-decoration:none; color:#000}
+main{ width:900px; 
+	    height:auto;
+	     margin:0px auto; 
+	      }
+
+header{ width:900px; height:150px; margin:0px; padding:0px; line-height:150px; display:flex; flex-wrap:nowrap;}
+
+#logo{  flex-grow:1; background:#888; margin:0px; padding:0px}
+
+#nav{  flex-grow:3;background:#999; margin:0px; padding:0px}
+
+section{ width:900px;
+	height:auto; 
+	margin:5px 0px; 
+	display:flex; flex-direction: row;
+	gap:20px; flex-wrap:wrap;
+
+	 }
+
+.box{ width: 210px; 
+	    height: 210px;  
+	    background:#999
+	  }
+
+ #BOX{ width:900px; 
+ 	     height:300px; 
+ 	      margin:5px 0px;
+ 	      display:flex; 
+ 	      gap:5px; 
+ 	      line-height:300px  }
+
+ .Box{ flex-grow:1; background:#999 }
+
+footer{ width:900px; 
+	       height:150px;
+	        background:#999; 
+	        margin-top:5px; 
+	        line-height:150px}
+
+
+</style>
+</head>
+<body>
+<main><!--main start-->
+  <header><!--header start-->
+     
+	  <div id="logo"><h2>Logo</h2></div>
+	  <div id="nav"><h2>Navigation</h2></div>
+	  
+  </header><!--header end-->
+  
+  <section><!--section start-->
+     <div class="box"></div>
+	 <div class="box"></div>
+	 <div class="box"></div>
+	 <div class="box"></div>
+	 <div class="box"></div>
+	 <div class="box"></div>
+	 <div class="box"></div>
+	 <div class="box"></div>
+	 <div class="box"></div>
+	 <div class="box"></div>
+	 <div class="box"></div>
+	 <div class="box"></div>
+	 <div class="box"></div>
+	 <div class="box"></div>
+	 <div class="box"></div>
+	 <div class="box"></div>
+	 
+  </section><!--section end-->
+
+  <div id="BOX">
+  	<div class="Box"><h2>Box1</h2></div>
+  		<div class="Box"><h2>Box2</h2></div>
+  			<div class="Box"><h2>Box3</h2></div>
+  </div>
+
+  
+  <footer><!--footer start-->
+    <h2>Footer</h2>
+  </footer><!--footer end-->
+ 
+</main><!--main end-->
+
+</body>
+</html>

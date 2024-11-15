@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React using CDN</title>
+
+</head>
+
+<body>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <div id="root"></div>
+  <div id="boot"></div>
+  <Script type="text/babel">
+    const root = document.getElementById("root");
+    const Eh1 = document.createElement("h1");
+    Eh1.textContent = "ShoppingCart";
+    root.appendChild(Eh1);
+
+    const boot = document.getElementById("boot");
+    const parent = ReactDOM.createRoot(boot);
+    // const h1 = React.createElement("h1", {}, "My Shopping List");
+    // parent.render(h1);
+    const h1 = <h1>My Shopping List</h1>;
+    const item1 = <li>Hello </li>;
+    const item2 = <li>Hi </li>;
+    const ul = (<ul>{item1}{item2}</ul>);
+    const container = <div>
+
+      {h1}{ul}
+    </div>
+    parent.render(container);
+
+
+  </Script>
+
+
+</body>
+
+</html>

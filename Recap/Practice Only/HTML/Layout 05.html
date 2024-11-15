@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Web page Layout</title>
+	<style type="text/css">
+		body{ margin:0px; padding:0px }
+		*,html{ margin:0px; padding:0px }
+		h2{ font-weight:100; font-size:18px }
+		main{ width:900px; 
+			height:auto; 
+			margin:0px auto; 
+			text-align:center; 
+			font-family:arial; 
+			color:#000;
+			 }
+
+		#logo{ width:900px; 
+			    height:100px; 
+			    line-height:100px;
+			    background: #999; 
+			    }
+
+		header{ width:900px; 
+			    height:150px; 
+			    line-height:150px;
+			    background:#999;
+			    margin-top: 10px; 
+			     }
+
+		nav{ width:900px; 
+			height:50px; 
+			margin-top:10px; 
+			line-height:50px; 
+			display: flex; gap: 10px; 
+		}
+
+		.tab{ flex-grow:1; background:#999 }
+
+		section{ width:900px; 
+			     height:450px; 
+			     margin:10px 0px ;
+			      }
+
+		#left{ width:540px; 
+			height:450px; 
+			float:left; 
+			background: #999;
+			line-height: 450px; 
+		}
+		
+		#right{ width:350px; 
+			    height:450px; 
+			    float:right; 
+		
+			     }
+
+		#rgt_top{ 
+		          width:350px; 
+			    height:240px;  
+			    background: #999; 
+			    line-height:240px }
+
+		#rgt_btm{ 
+		          width:350px; 
+			    height:200px;  
+			    background: #999;
+			    margin-top:10px; 
+			    line-height:200px }	    
+
+
+		footer{ width:900px; 
+			    height:100px;  
+			    margin-top:10px; 
+			    line-height:100px; 
+			    background: #999; 
+			}
+
+	</style>
+</head>
+<body>
+ <main><!--main start-->
+ 	<div id="logo"><h2>company logo and slogan</h2></div>
+
+ 	<header><h2>header</h2></header>
+
+ 	<nav>
+ 		<div class="tab"><h2>navigation1</h2></div>
+ 		<div class="tab"><h2>navigation2</h2></div>
+ 		<div class="tab"><h2>navigation3</h2></div>
+ 		<div class="tab"><h2>navigation4</h2></div>
+ 	</nav>
+
+ 	<section>
+ 		<div id="left"><h2>about</h2></div>
+ 		
+ 		<div id="right">
+ 			<div id="rgt_top"><h2>quick links</h2></div>
+ 			<div id="rgt_btm"><h2>quick links</h2></div>
+ 		</div>
+ 	</section>
+ 	<footer><h2>Footer</h2></footer>
+ </main><!--main end-->
+</body>
+</html>

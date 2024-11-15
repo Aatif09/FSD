@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Light Bulb Switch</title>
+  <!-- <link rel="stylesheet" href="bulb.css"> -->
+  <style>
+    /* Style for the modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.4); 
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  /* Bulb container styling */
+  #lightBulbContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .bulb-container {
+    text-align: center;
+    margin: 10px;
+  }
+  .bulb-container img {
+    width: 50px;
+    height: 100px;
+  }
+  
+  </style>
+</head>
+<body>
+  <button id="startBtn">Start</button>
+
+  <!-- Modal Structure -->
+  <div id="myModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Enter a number (N)</h2>
+      <input type="number" id="numberInput" placeholder="Enter a number">
+      <button id="submitBtn">Done</button>
+    </div>
+  </div>
+
+  <!-- Container for light bulbs -->
+  <div id="lightBulbContainer"></div>
+
+  <script src="bulb.js"></script>
+</body>
+</html>

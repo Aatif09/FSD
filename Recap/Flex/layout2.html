@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            text-align: center;
+        }
+
+        /* Top Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #0a0a0a;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Flex container for products */
+        .product-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 4rem;
+            background-color: #111;
+        }
+
+        .product-card {
+            background-color: #000;
+            border: 2px solid #444;
+            padding: 1.5rem;
+            width: 25%;
+            text-align: center;
+        }
+
+        .product-card h3 {
+            text-transform: uppercase;
+            color: #ff694f;
+            margin: 1rem 0;
+        }
+
+        .product-card p {
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #00bfff;
+            text-decoration: none;
+        }
+        
+                  .product-card {
+                width: 80%;
+                margin-bottom: 1rem;
+            }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <div class="navbar">
+        <a href="#">Products</a>
+        <a href="#">Discounts</a>
+        <a href="#">Our Partners</a>
+        <a href="#">About Us</a>
+    </div>
+
+    <!-- Products Section -->
+    <div class="product-container">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://via.placeholder.com/100" alt="Matte">
+            </div>
+            <h3>Matte</h3>
+            <p>a subtle but elegant finish for low-touch and delicate surfaces</p>
+            <a href="#" class="explore-btn">Explore</a>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://via.placeholder.com/100" alt="Semi-Gloss">
+            </div>
+            <h3>Semi-Gloss</h3>
+            <p>our signature finish for high-wear parts, details and surfaces</p>
+            <a href="#" class="explore-btn">Explore</a>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://via.placeholder.com/100" alt="High-Gloss">
+            </div>
+            <h3>High-Gloss</h3>
+            <p>an eye-stopping shine best for metal and other smooth surfaces</p>
+            <a href="#" class="explore-btn">Explore</a>
+        </div>
+    </div>
+
+</body>
+</html>
