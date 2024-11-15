@@ -10,7 +10,14 @@ const Count1 = () => {
           setCount(count + 1);
         }}
       >
-        Hey Here
+        CLick here for +
+      </button>
+      <button
+        onClick={() => {
+          setCount(count - 1);
+        }}
+      >
+        CLick here for -
       </button>
       <p>Count: {count}</p>
     </div>
