@@ -1,0 +1,22 @@
+
+.startquiz{
+    margin: auto;
+    padding: 20px;
+    width: 50%;
+    height: 70vh;
+    border-radius: 10px;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-items: center;
+}
+.startquiz #start{
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    background-color: blue;
+    color: greenyellow;
+    font-size: 40px;
+    
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Events with Styling (Using addEventListener)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    #eventBox {
+      width: 250px;
+      height: 250px;
+      background-color: #3498db;
+      margin: 20px;
+      transition: background-color 0.4s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.5em;
+      border-radius: 15px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #eventBox:hover {
+      cursor: pointer;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border: 2px solid #3498db;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      width: 220px;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      border-color: #2ecc71;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c0392b;
+      cursor: pointer;
+    }
+
+    button:active {
+      background-color: #e74c3c;
+      transform: scale(0.95);
+    }
+
+    .output {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #2980b9;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Interactive JavaScript Events Example</h1>
+
+  <!-- onload event -->
+  <p id="loadMessage"></p>
+
+  <!-- onchange event -->
+  <label for="textInput">Type something: </label>
+  <input type="text" id="textInput" placeholder="Type here...">
+  <p class="output" id="textOutput"></p>
+
+  <!-- onclick and ondblclick events -->
+  <button id="clickButton">Click or Double-click Me!</button>
+  <p class="output" id="clickMessage"></p>
+
+  <!-- onmouseover, onmouseout, and onmouseenter events -->
+  <div id="eventBox">Hover Me</div>
+  <p class="output" id="hoverMessage"></p>
+
+  <!-- onkeydown and onkeyup events -->
+  <label for="keyInput">Press any key: </label>
+  <input type="text" id="keyInput" placeholder="Press a key">
+  <p class="output" id="keyMessage"></p>
+
+  <!-- onfocus and onblur events -->
+  <label for="focusInput">Focus on this input: </label>
+  <input type="text" id="focusInput" placeholder="Focus me">
+  <p class="output" id="focusMessage"></p>
+
+  <script>
+    // onload event
+    window.addEventListener('load', function() {
+      document.getElementById('loadMessage').innerText = 'Page is fully loaded!';
+    });
+
+    // onchange event
+    const textInput = document.getElementById('textInput');
+    textInput.addEventListener('change', function() {
+      let text = this.value;
+      document.getElementById('textOutput').innerText = 'You typed: ' + text;
+    });
+
+    // onclick and ondblclick events
+    const clickButton = document.getElementById('clickButton');
+    clickButton.addEventListener('click', function() {
+      document.getElementById('clickMessage').innerText = 'You clicked the button!';
+    });
+
+    clickButton.addEventListener('dblclick', function() {
+      document.getElementById('clickMessage').innerText = 'You double-clicked the button!';
+    });
+
+    // onmouseover, onmouseout, and onmouseenter events
+    const eventBox = document.getElementById('eventBox');
+    eventBox.addEventListener('mouseover', function() {
+      this.style.backgroundColor = '#2ecc71';
+      document.getElementById('hoverMessage').innerText = 'Mouse is over the box!';
+    });
+
+    eventBox.addEventListener('mouseout', function() {
+      this.style.backgroundColor = '#3498db';
+      document.getElementById('hoverMessage').innerText = 'Mouse left the box!';
+    });
+
+    eventBox.addEventListener('mouseenter', function() {
+      document.getElementById('hoverMessage').innerText = 'Mouse entered the box!';
+    });
+
+    // onkeydown and onkeyup events
+    const keyInput = document.getElementById('keyInput');
+    keyInput.addEventListener('keydown', function(event) {
+      document.getElementById('keyMessage').innerText = 'You pressed: ' + event.key;
+    });
+
+    keyInput.addEventListener('keyup', function(event) {
+      document.getElementById('keyMessage').innerText = 'You released: ' + event.key;
+    });
+
+    // onfocus and onblur events
+    const focusInput = document.getElementById('focusInput');
+    focusInput.addEventListener('focus', function() {
+      document.getElementById('focusMessage').innerText = 'Input is focused!';
+    });
+
+    focusInput.addEventListener('blur', function() {
+      document.getElementById('focusMessage').innerText = 'Input lost focus!';
+    });
+  </script>
+</body>
+</html>

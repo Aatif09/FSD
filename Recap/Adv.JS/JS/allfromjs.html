@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Event Handling Example</title>
+</head>
+
+<body>
+  <script>
+
+    const heading = document.createElement('h1');
+    heading.textContent = 'Events in JavaScript';
+    document.body.append(heading);
+
+    const button = document.createElement('button');
+    button.id = 'clickButton';
+    button.textContent = 'Click Me!';
+    document.body.append(button);
+
+    const clickMessage = document.createElement('p');
+    clickMessage.id = 'clickMessage';
+    document.body.append(clickMessage);
+
+    // Create and append a label and input for name
+    const nameLabel = document.createElement('label');
+    nameLabel.setAttribute('for', 'nameInput');
+    nameLabel.textContent = 'Name: ';
+    document.body.append(nameLabel);
+
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.id = 'nameInput';
+    nameInput.placeholder = 'Enter your name';
+    document.body.append(nameInput);
+
+    const focusMessage = document.createElement('p');
+    focusMessage.id = 'focusMessage';
+    document.body.append(focusMessage);
+
+    // Create and append a label and select dropdown for color
+    const colorLabel = document.createElement('label');
+    colorLabel.setAttribute('for', 'colorSelect');
+    colorLabel.textContent = 'Select a color: ';
+    document.body.append(colorLabel);
+
+    const colorSelect = document.createElement('select');
+    colorSelect.id = 'colorSelect';
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = '--Choose--';
+    colorSelect.append(defaultOption);
+
+    const optionRed = document.createElement('option');
+    optionRed.value = 'Red';
+    optionRed.textContent = 'Red';
+    colorSelect.append(optionRed);
+
+    const optionGreen = document.createElement('option');
+    optionGreen.value = 'Green';
+    optionGreen.textContent = 'Green';
+    colorSelect.append(optionGreen);
+
+    const optionBlue = document.createElement('option');
+    optionBlue.value = 'Blue';
+    optionBlue.textContent = 'Blue';
+    colorSelect.append(optionBlue);
+
+    document.body.append(colorSelect);
+
+    const colorMessage = document.createElement('p');
+    colorMessage.id = 'colorMessage';
+    document.body.append(colorMessage);
+
+    // Create and append a label and input for typing
+    const textLabel = document.createElement('label');
+    textLabel.setAttribute('for', 'textInput');
+    textLabel.textContent = 'Type something: ';
+    document.body.append(textLabel);
+
+    const textInput = document.createElement('input');
+    textInput.type = 'text';
+    textInput.id = 'textInput';
+    textInput.placeholder = 'Start typing...';
+    document.body.append(textInput);
+
+    const keyMessage = document.createElement('p');
+    keyMessage.id = 'keyMessage';
+    document.body.append(keyMessage);
+
+    // Adding Event Handlers
+    document.getElementById('clickButton').onclick = function () {
+      document.getElementById('clickMessage').innerText = "Button Clicked!";
+    };
+
+    document.getElementById('nameInput').onfocus = function () {
+      document.getElementById('focusMessage').innerText = "Input field is focused!";
+    };
+
+    document.getElementById('nameInput').onblur = function () {
+      document.getElementById('focusMessage').innerText = "Input field lost focus!";
+    };
+
+    document.getElementById('colorSelect').onchange = function () {
+      let selectedColor = this.value;
+      document.getElementById('colorMessage').innerText = "You selected: " + selectedColor;
+    };
+
+    document.getElementById('textInput').onkeyup = function () {
+      let typedText = this.value;
+      document.getElementById('keyMessage').innerText = "You typed: " + typedText;
+    };
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.dynamic-heading {
+    color: #333;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.dynamic-paragraph {
+    color: #555;
+    font-size: 18px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.dynamic-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dynamic-button:hover {
+    background-color: #45a049;
+}

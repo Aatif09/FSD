@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS !important Example</title>
+    <style>
+        p {
+            color: blue;
+        }
+        .highlight {
+            color: red;
+        }
+        #special {
+            color: green;
+        }
+        .important {
+            color: purple !important;
+        }
+        #very-important {
+            color: orange !important;
+        }
+        .inline-no-important {
+            color: yellow;
+        }
+        .inline-important {
+            color: pink !important;
+        }
+        * {
+            color: gray !important;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS !important Use Cases</h2>
+    <p>This is a normal paragraph styled by the type selector (color should be gray due to universal selector).</p>
+
+    <p class="highlight">This paragraph is styled by the class selector (color should be gray due to universal selector).</p>
+
+    <p id="special">This paragraph is styled by the ID selector (color should be gray due to universal selector).</p>
+
+   
+    <p class="highlight important">This paragraph is styled by both class selectors, but the color should be purple due to !important.</p>
+
+
+    <p id="very-important">This paragraph has an ID selector with !important (color should be orange).</p>
+
+ 
+    <p class="inline-no-important" style="color: blue;">This paragraph has an inline style without !important (color should be gray due to universal selector).</p>
+
+
+    <p class="inline-important" style="color: red;">This paragraph has an inline style with !important (color should be pink due to inline !important).</p>
+
+    <!-- Case 8: Universal selector with !important -->
+    <p>This is styled by the universal selector with !important, so it should be gray, overriding other styles except inline styles with !important.</p>
+
+    <h3>Observe how !important affects different cases.</h3>
+
+</body>
+</html>
+
+
+<!-- General Order of Specificity: -->
+
+<!-- 
+
+1.Inline styles with !important
+2.Universal selector with !important
+3.ID selectors with !important
+4.Class selectors with !important
+5.ID selectors
+6.Class selectors
+7.Type selectors (e.g., p)
+8.Universal selector 
+
+-->

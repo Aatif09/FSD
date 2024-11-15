@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Inside Table Example</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td input {
+            width: 100%;
+            padding: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align: center;">ABES Event Form Inside a Table</h2>
+
+<form action="#" method="post">
+    <table>
+        <thead>
+            <tr>
+                <th>Field Name</th>
+                <th>Input</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" placeholder="Enter your name" required></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="number" name="age" placeholder="Enter your age" required></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email" placeholder="Enter your email" required></td>
+            </tr>
+            <tr>
+                <td for="">Gender:</td>
+                <td>
+                    <label for="male">Male</label>
+                    <input type="radio" id="male" name="gender" value="Male" required> 
+                    <label for="female">Female</label>
+                    <input type="radio" id="female" name="gender" value="Female" required> 
+                </td>
+            </tr>
+            <tr>
+                <td>Hobbies:</td>
+                <td>
+                    <input type="checkbox" name="hobbies" value="Reading"> Reading
+                    <input type="checkbox" name="hobbies" value="Sports"> Sports
+                    <input type="checkbox" name="hobbies" value="Music"> Music
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit">Submit</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</form>
+
+</body>
+</html>

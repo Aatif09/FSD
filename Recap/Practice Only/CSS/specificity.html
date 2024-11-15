@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Specificity: Comprehensive Example</title>
+    <style>
+        /* Universal selector (very low specificity) */
+        * {
+            color: gray;
+        }
+
+        /* Type selector (low specificity) */
+        p {
+            color: blue;
+        }
+
+        /* Class selector (medium specificity) */
+        .important-text {
+            color: red;
+        }
+
+        /* ID selector (high specificity) */
+        #unique-text {
+            color: green;
+        }
+
+        /* Inline style (highest specificity) */
+        .inline-style {
+            color: purple !important;
+        }
+
+        /* Type + Class combination (higher specificity) */
+        p.important-text {
+            color: orange;
+        }
+
+        /* Type + ID combination (even higher specificity) */
+        p#unique-text {
+            color: brown;
+        }
+
+        /* Class + ID combination (very high specificity) */
+        #unique-text.important-text {
+            color: black;
+        }
+
+        /* Universal selector with !important (overrides most selectors unless inline also uses !important) */
+        * {
+            color: pink !important;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>CSS Specificity: Multiple Combinations</h2>
+
+    <p>This text is styled by the type selector (should be overridden by the universal selector and turn pink).</p>
+
+    <p class="important-text">This text is styled by the class selector (should be overridden by the universal selector and turn pink).</p>
+
+    <p id="unique-text">This text is styled by the ID selector (should be overridden by the universal selector and turn pink).</p>
+
+    <p class="important-text" id="unique-text">This text has both class and ID selectors (should be overridden by the universal selector and turn pink).</p>
+
+    <p class="important-text" style="color: purple;">This text has an inline style (should be purple).</p>
+
+    <p id="unique-text" class="important-text" style="color: purple;">This text has both class and ID selectors, plus inline style (should be purple).</p>
+
+    <p>This text is styled by the type selector and universal selector (should be pink due to !important).</p>
+
+    <p class="important-text" id="unique-text">This text has the highest specificity without inline styles (should be black, but !important makes it pink).</p>
+
+    <h3>Notice how the colors are applied based on specificity.</h3>
+
+</body>
+</html>

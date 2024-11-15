@@ -1,0 +1,13 @@
+img{
+  width: 200px;
+  height: 200px;
+  border-radius: 40%;
+}
+.aa{
+  border: 2px solid red;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

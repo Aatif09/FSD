@@ -1,0 +1,27 @@
+.parent>div{
+    font-size: 24px;
+    text-align: center;
+    background-color: blanchedalmond;
+    border: 2px solid rgb(220, 35, 35);
+   
+}
+.parent{
+
+    /* use flex layout */
+    display:flex;
+    justify-content:center;
+    gap: 20px;
+    height:150px;
+    align-items: flex-end;
+    background-color: burlywood;
+    /* flex-wrap:nowrap; */
+    /* justify-content: space-evenly; */
+}
+.child1,.child2,.child4{
+    /* flex-basis: 100px;
+    flex-shrink: 0; */
+    height: 100px;
+}
+.child3{
+    flex-grow: 1;
+}

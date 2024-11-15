@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unordered List Example</title>
+</head>
+<body>
+    <h1>Unordered List Examples</h1>
+    <h2>1. Default Unordered List (disc bullets)</h2>
+    <ul>
+        <li>Item One</li><li>Item Two</li><li>Item Three</li>
+    </ul>
+    <h2>2. Circle Bullet List</h2>
+    <ul style="list-style-type: circle;">
+        <li>Circle Item One</li>
+        <li>Circle Item Two</li>
+        <li>Circle Item Three</li>
+    </ul>
+    <h2>3. Square Bullet List</h2>
+    <ul style="list-style-type: square;">
+        <li>Square Item One</li>
+        <li>Square Item Two</li>
+        <li>Square Item Three</li>
+    </ul>
+    <h2>4. Nested Unordered List</h2>
+    <ul class="nested-list">
+        <li>Parent Item 1
+            <ul><li>Child Item 1.1</li><li>Child Item 1.2</li></ul>
+        </li>
+        <li>Parent Item 2
+            <ul><li>Child Item 2.1</li><li>Child Item 2.2</li></ul>
+        </li>
+    </ul>
+</body>
+</html>
+<!-- <style>
+        /* Custom bullet style for the list */
+        ul.custom-bullets {
+            list-style-type: square;
+        }
+        ul.custom-image-bullets {
+    list-style: none; 
+    padding-left: 0;
+}
+
+ul.custom-image-bullets li {
+    background-image: url('/Day13_UI_Test/images/logo2.png');
+    background-size: 20px 20px; /* Set custom width and height */
+    background-repeat: no-repeat; /* Prevent repetition of the image */
+    background-position: 0 5px; /* Position the image */
+    padding-left: 30px; /* Make space for the image */
+    margin-bottom: 10px; /* Optional: add some space between list items */
+}
+
+        /* Example for nested list styles */
+        ul.nested-list ul {
+            list-style-type: circle;
+        } 
+    </style> -->
+    <!-- <h2>5. Custom Image Bullet List</h2>
+    <ul class="custom-image-bullets">
+        <li>Image Bullet Item One</li>
+        <li>Image Bullet Item Two</li>
+        <li>Image Bullet Item Three</li>
+    </ul> -->

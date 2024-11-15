@@ -1,0 +1,18 @@
+.footer {
+  width: 100%;
+  border: 2px solid;
+  background-color: black;
+  height: 60px;
+  color: white;
+
+}
+
+ul {
+  list-style: none;
+
+}
+
+li {
+  display: inline;
+  padding: 30px;
+}

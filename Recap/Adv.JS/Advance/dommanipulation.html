@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Example</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+
+        .dynamic-text {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="main-heading">DOM Manipulation in JavaScript</h1>
+
+    <p class="text" id="paragraph1">This is the first paragraph.</p>
+    <p class="text" id="paragraph2">This is the second paragraph.<span id="hidden-text" style="display:none;">This is
+            hidden text.</span></p>
+
+    <button id="changeTextBtn">Change Text</button>
+    <button id="changeColorBtn">Change Color</button>
+    <button id="addHTMLBtn">Add HTML</button>
+    <button id="showHiddenBtn">Show Hidden Text</button>
+
+    <div id="html-container"></div>
+
+    <script>
+        // Select by ID
+        const heading = document.getElementById("main-heading");
+        const paragraph1 = document.getElementById("paragraph1");
+        const hiddenText = document.getElementById("hidden-text");
+
+        // Select by class (getElementsByClassName returns a collection)
+        const paragraphs = document.getElementsByClassName("text");
+
+        // Select by querySelector
+        const paragraph2 = document.querySelector("#paragraph2");
+
+        // 2. Changing HTML Content
+
+        // Using innerHTML
+        document.getElementById("addHTMLBtn").addEventListener("click", () => {
+            document.getElementById("html-container").innerHTML = "<p>Newly added <strong>HTML</strong> content!</p>";
+        });
+
+        // Using innerText
+        document.getElementById("changeTextBtn").addEventListener("click", () => {
+            paragraph1.innerText = "This text has been changed using innerText!";
+        });
+
+        // Using textContent
+        paragraph2.textContent = "This text was updated using textContent.";
+
+
+        // 3. Changing CSS Style
+
+        document.getElementById("changeColorBtn").addEventListener("click", () => {
+            heading.style.color = "red";
+            paragraph1.style.backgroundColor = "lightblue";
+            paragraphs[1].classList.add("highlight");
+        });
+        document.getElementById("showHiddenBtn").addEventListener("click", () => {
+            hiddenText.style.display = "inline";
+            alert("TextContent of paragraph2: " + paragraph2.textContent);
+        });
+        // 4. Adding Event Listeners
+        heading.addEventListener("click", () => {
+            alert("You clicked the heading!");
+        });
+
+    </script>
+
+</body>
+
+</html>

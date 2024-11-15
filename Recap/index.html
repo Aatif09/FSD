@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flowchart Example</title>
+  <style>
+    .flowchart-box {
+      border: 1px solid black;
+      padding: 10px;
+      margin: 10px;
+      text-align: center;
+      display: inline-block;
+      width: 200px;
+    }
+
+    .flowchart-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .arrow {
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="flowchart-container">
+    <!-- Authentication Step -->
+    <div class="flowchart-box">Firebase Authentication</div>
+    <div class="arrow">↓</div>
+
+    <!-- Role-Based Decision -->
+    <div class="flowchart-box">Sign in as Teacher or Student?</div>
+    <div class="arrow">↓</div>
+
+    <!-- Teacher Branch -->
+    <div class="flowchart-container">
+      <div class="flowchart-box">Teacher: Upload Content</div>
+      <div class="arrow">↓</div>
+      <div class="flowchart-box">Set Copy-Paste Permissions</div>
+      <div class="arrow">↓</div>
+      <div class="flowchart-box">Store Content in Firestore</div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <!-- Student Branch -->
+    <div class="flowchart-container">
+      <div class="flowchart-box">Student: View Content</div>
+      <div class="arrow">↓</div>
+      <div class="flowchart-box">Apply Copy-Paste Restrictions</div>
+      <div class="arrow">↓</div>
+      <div class="flowchart-box">Dynamic Watermark (Discourage Screenshot)</div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <!-- Frontend-Backend Step -->
+    <div class="flowchart-box">Frontend (React) and Backend (Node.js)</div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dom Manipulation</title>
+  <style>
+    #parent {
+      margin: 100px;
+      width: 200px;
+      height: 200px;
+      align-content: center;
+    }
+
+    #title {
+      color: Red;
+      font-weight: bold;
+    }
+
+    .list-item {
+      font-size: large;
+      color: purple;
+      text-align: justify;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="parent"></div>
+  <!-- Babel Script -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- A content delivery network (CDN) is a network of interconnected servers that speeds up webpage loading for data-heavy applications. 
+     https://legacy.reactjs.org/docs/cdn-links.html -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+
+
+  <script type="text/babel">
+    // //............... Plain JS...............
+
+    // const parent = document.getElementById("parent");
+    // const title = document.createElement("h4");
+    // title.innerText = "Shopping Textttt";
+    // title.setAttribute("class", "title");  // or title.className = "title";
+    // title.style.color = "red";
+    // parent.appendChild(title);
+
+    // const list = document.createElement("ul");
+    // parent.appendChild(list);
+
+    // const veg = document.createElement("li");
+    // veg.innerText = "Vegetables";
+    // parent.appendChild(veg);
+
+    // const fruits = document.createElement("li");
+    // fruits.innerText = "Fruits";
+    // parent.appendChild(fruits);
+
+    // not optimized & length ... Full page is loading again and again
+
+    //................. React DOM.................
+
+    // In React, the parent element is necessary to serve as the root container for rendering React components into the DOM. However, the parent element doesn't have to be a div with the ID of parent. It can be any valid HTML element, such as the body tag or any other container element in the DOM.
+    //const parent = document.body;
+
+    // Creating roots directly with document.body is discouraged, since its children are often manipulated by third-party scripts and browser extensions.
+    // const parent = document.getElementById("parent"); // JS DOM Elements
+    // const root = ReactDOM.createRoot(parent); // JS DOM to React DOM Connection
+
+    // const title = React.createElement("h4", {}, "Shopping Text");
+    // // (type, properties , children(String/Array,reactElement/object))
+
+    // console.log(title);
+    // root.render(title);
+
+    // In React, the render method is used to display React elements (like components or plain elements) in the DOM. When you call root.render(title);, you're instructing React to take the title element you created and insert it into the DOM at the location specified by the parent element.
+
+    // React to create unordered list
+    // const item1 = React.createElement("li", {}, "Vegetables");
+    // const item2 = React.createElement("li", {}, "Fruits");
+    // // const list = React.createElement("ul",{},item1,item2); 
+    // const list = React.createElement("ul", {}, [item1, item2]);
+    // root.render(list);
+
+    //============ React Object=========
+
+    // const parent = document.getElementById("parent"); // JS DOM Elements
+    // const root = ReactDOM.createRoot(parent); // JS DOm to React DOM Connection
+    // const item1 = React.createElement("li", {}, "Vegetables");
+    // const list = React.createElement("ul",{},item1); // only 3 can be added
+    // root.render(list);
+    // console.log(list);
+
+    // Parenting
+    const parent = document.getElementById("parent"); // JS DOM Elements
+    const root = ReactDOM.createRoot(parent); // JS DOm to React DOM Connection
+    const item1 = React.createElement("li", {}, "Vegetables");
+    const item2 = React.createElement("li", {}, "Fruits");
+    const list = React.createElement("ul", {}, item1, item2);
+    const title = React.createElement("h4", {}, "Shopping List");
+    //root.render([title, list]);
+    const container = React.createElement("div", {}, [title, list]);
+    root.render(container);
+
+    //=============JSX.==============================================
+    //     const parent = document.getElementById("parent"); // JS DOM Elements
+    //     const root = ReactDOM.createRoot(parent); // JS DOm to React DOM Connection
+    //     // const title = React.createElement("h4", {}, "Shopping List");
+    //     const title = <h4> Shoppling List New </h4>; // Use Babel for Traslation (https://babeljs.io/)
+    //     const li1 = <li> Vegetables</li>; // Use Babel for Traslation (https://babeljs.io/)
+    //     const li2 = <li> Fruits</li>; // Use Babel for Traslation (https://babeljs.io/)
+    //     const ul = (
+    //       <ul>
+    //         {li1} {li2}
+    //       </ul>
+    //     ); // Use Babel for Traslation (https://babeljs.io/)
+    //     const container = (
+    //       <div>
+    //         {title} {ul}
+    //       </div>
+    //     );
+    //     root.render(container);
+
+    //     //=================== Short Code=============================
+    const parent = document.getElementById("parent"); // JS DOM Elements
+    const root = ReactDOM.createRoot(parent); // JS DOm to React DOM Connection
+    const container = <div>
+      <h4 id="title"> Shoppling List New </h4>
+      <ul>
+        <li className="list-item"> Vegetables</li>
+        <li className="list-item"> Fruits</li>
+      </ul>
+    </div>;
+    root.render(container);
+    //   </script>
+</body>
+
+</html>

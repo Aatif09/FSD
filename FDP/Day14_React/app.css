@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.aa {
+  display: flex;
+}
+
+.navbar {
+  background-color: brown;
+  color: aqua;
+
+}
+
+.info {
+  margin-top: 10px;
+  background-color: bisque;
+  padding: 20px;
+  border: 2px dashed green;
+  border-radius: 20%;
+  width: 400Px;
+  gap: 10px;
+}
+
+body {
+  background-color: azure;
+}

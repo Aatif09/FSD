@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content & Border Box Sizing</title>
+    <style>
+        .content-box {
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            border: 10px solid green;
+            background-color: lightblue;
+            box-sizing: content-box; /* Default behavior */
+        }
+        .border-box {
+            width: 200px;
+            height:200px;
+            padding: 20px;
+            border: 10px solid red;
+            background-color: lightgreen;
+            box-sizing: border-box; /* Padding and border are included in the width and height */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-box">
+        Content-box sizing example
+    </div>
+
+    <p>The width of the box is 200px, but padding and border are added on top of that, making the box larger than 200px.</p>
+
+     <div class="border-box">
+        Border-box sizing example
+    </div>
+
+    <p>The width of the box is 200px, and padding and border are included within this width.</p>
+
+</body>
+</html>
